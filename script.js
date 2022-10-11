@@ -19,12 +19,22 @@ document.querySelector(".number") = SecretNumber;
 // Event handler function
 document.querySelector(".check").addEventListener("click", function() {
     const guess = Number( document.querySelector(".guess").value);
-    console.log(typeof guess)
+    console.log(typeof guess);
 
+
+// when there is no input
     if ( !guess ){
         document.querySelector(".message").textContent = " No Number"
+      
+        document.querySelector("body").style.backgroundColor = "#60b347"
+
+        document.querySelector(".number").style.width = "30rem";
+
+        // when player is win
     } else if (guess === SecretNumber) {
         document.querySelector(".message").textContent = " Correct Number"
+        
+        // when guess is to high
     } else if (guess >  SecretNumber) {
 
         if( score > 1){

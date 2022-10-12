@@ -12,7 +12,7 @@
 
 let secretNumber = Math.trunc(Math.random()* 20) +1;
 let score = 20;
-let highScore = 0;
+let highscore = 0;
 
 // Event handler function
 document.querySelector(".check").addEventListener("click", function() {
@@ -32,17 +32,16 @@ document.querySelector(".check").addEventListener("click", function() {
         document.querySelector("body").style.backgroundColor = "#60b347"
         document.querySelector(".number").style.width = "30rem";
 
-        if ( score > highScore){
-            highScore = score;
+        if ( score > highscore){
+            highscore = score;
             document.querySelector(".highscore").textContent = highscore;
         }
 
-        // when is duplicate score
+        // when is duplicate 
     } else if (guess !== secretNumber){
         if( score > 1){
             document.querySelector(".message").textContent = guess > secretNumber 
-            ? "📣 Too high" 
-            : "😵‍💫 Too low";
+            ? "📣 Too high" : "😵‍💫 Too low";
             
             score --;
             document.querySelector(".score").textContent = score;

@@ -88,7 +88,7 @@ document.querySelector(".check").addEventListener("click", function() {
 
 document.querySelector(".again").addEventListener("click", function() {
     const restart = Number(document.querySelector(".number").value)
-    console.log(typeof restart);
+    // console.log(typeof restart);
     score = 20;
     secretNumber = Math.trunc(Math.random()* 20) + 3;
 

@@ -22,11 +22,10 @@ const numberApp = function(number){
     document.querySelector(".number").textContent = number;
 }
 
-
 // Event handler function
 document.querySelector(".check").addEventListener("click", function() {
     const guess = Number(document.querySelector(".guess").value);
-    console.log(guess , typeof guess);
+    // console.log(guess , typeof guess);
 
 // when there is no input
     if ( !guess ){
@@ -36,13 +35,11 @@ document.querySelector(".check").addEventListener("click", function() {
       
         // when player is win
     } else if (guess === secretNumber) {
-        document.querySelector(".message").textContent = " Correct Number"
+        displayMessage(" Correct Number")
         numberApp(secretNumber)
-        numberApp().style.width = "35rem"
         
         document.querySelector("body").style.backgroundColor = "#60b347"
-        // document.querySelector(".number").style.width = "30rem";
-
+        document.querySelector(".number").style.width = "30rem";
 
         if ( score > highscore){
             highscore = score;
@@ -52,13 +49,14 @@ document.querySelector(".check").addEventListener("click", function() {
         // when is duplicate 
     } else if (guess !== secretNumber){
         if( score > 1){
-            document.querySelector(".message").textContent = guess > secretNumber 
-            ? "📣 Too high" : "😵‍💫 Too low";
-            
+            // document.querySelector(".message").textContent = guess > secretNumber 
+            // ? "📣 Too high" : "😵‍💫 Too low";
+            displayMessage( guess > secretNumber ? "💹Too high" : "📈Too Low")
             score --;
             document.querySelector(".score").textContent = score;
         } else {
-            document.querySelector(".message").textContet = "😵 You lost the game, start over"
+            // document.querySelector(".message").textContet = "😵 You lost the game, start over"
+            displayMessage("😵‍💫 You lost the game")
             document.querySelector(".score").textContent = 0
         }
     }
@@ -103,6 +101,6 @@ document.querySelector(".again").addEventListener("click", function() {
 
    
 })
-//Refactor the code base of the aplication 
+
 
 

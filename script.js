@@ -15,6 +15,7 @@ let secretNumber = Math.trunc(Math.random()* 20) +1;
 
 //  This is the value of the score that we can decrease the values in the html
 let score = 20;
+let highScore = 0;
 
 document.querySelector(".again").addEventListener("click", function() {
     const restart = Number(document.querySelector(".number").value)
@@ -51,6 +52,10 @@ document.querySelector(".check").addEventListener("click", function() {
         document.querySelector("body").style.backgroundColor = "#60b347"
         document.querySelector(".number").style.width = "30rem";
 
+        if ( score > highScore){
+            highScore = score;
+            document.querySelector(".highScore").textContent = highScore;
+        }
         // when guess is to high
     } else if (guess > secretNumber) {
 
